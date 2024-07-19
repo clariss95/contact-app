@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Register from './Register';
 import Login from './Login';
 import Contacts from './Contacts';
-import Logout from './Logout'; // Import the Logout component
-import ProtectedRoute from './ProtectedRoute'; // Import the ProtectedRoute component
+import Logout from './Logout';
+import ProtectedRoute from './ProtectedRoute';
+import './index.css'; 
 
 const App = () => {
   const token = localStorage.getItem('token');
@@ -24,7 +25,7 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="/" element={<Navigate to={token ? "/contacts" : "/login"} />} />
+          <Route path="/" element={token ? <Navigate to="/contacts" /> : <Navigate to="/login" />} />
         </Routes>
       </div>
     </Router>

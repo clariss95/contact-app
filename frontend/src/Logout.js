@@ -2,14 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
-  };
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/login');
+    };
 
-  return <button onClick={handleLogout}>Logout</button>;
+    return (
+        <button onClick={handleLogout}>Logout</button>
+    );
 };
 
 export default Logout;
