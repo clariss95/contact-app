@@ -24,9 +24,6 @@ This app is built with the following technologies:
   - Mongoose for MongoDB object modeling 🗂️
   - JSON Web Tokens (JWT) for authentication 🔑
 
-## Getting Started 🚀
-
-Follow these steps to get the app up and running locally:
 
 ### Prerequisites
 
