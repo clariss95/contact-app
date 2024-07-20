@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Logout from './Logout';
+import Header from './Header'; 
 
 const Contacts = () => {
     const [contacts, setContacts] = useState([]);
@@ -88,8 +89,12 @@ const Contacts = () => {
 
     return (
         <div>
-            <h1>Contacts</h1>
-            <Logout />
+             <Header /> 
+             <Logout />
+             <div class="h2-container"><h2>Your contacts</h2></div>
+             <div class="h1-container"> 
+           <p >Here you can manage your contacts. You can add new contacts and change or delete existing contacts. Don't worry, they will saved here once you log back in. </p></div>
+         
             <form onSubmit={editContactId ? handleEditSubmit : handleSubmit}>
                 <input
                     type="text"
@@ -112,14 +117,14 @@ const Contacts = () => {
                     value={editContactId ? editContact.phone : newContact.phone}
                     onChange={editContactId ? handleEditChange : handleChange}
                 />
-                <button type="submit">{editContactId ? 'Update' : 'Add'} Contact</button>
+                <button class="button1" type="submit">{editContactId ? 'Update' : 'Add'} Contact</button>
             </form>
-            <ul>
+            <ul class="loaded-contacts">
                 {contacts.map(contact => (
                     <li key={contact._id}>
                         {contact.name} - {contact.email} - {contact.phone}
-                        <button onClick={() => handleEdit(contact)}>Edit</button>
-                        <button onClick={() => handleDelete(contact._id)}>Delete</button>
+                        <button class="button2" onClick={() => handleEdit(contact)}>Edit</button>
+                        <button class="button2" onClick={() => handleDelete(contact._id)}>Delete</button>
                     </li>
                 ))}
             </ul>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header'; 
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -30,7 +31,8 @@ const Register = () => {
 
     return (
         <div>
-            <h1>Register</h1>
+             <Header /> 
+             <div class="h2-container"><h2>Register</h2></div>
             <form onSubmit={handleRegister}>
                 <input
                     type="text"
@@ -53,7 +55,7 @@ const Register = () => {
                     value={password}
                     onChange={handleChange}
                 />
-                <button type="submit">Register</button>
+                <button class="button1" type="submit">Register</button>
             </form>
         </div>
     );
